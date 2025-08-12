@@ -70,9 +70,9 @@ def set_posting_date_today(driver):
             break
 
     for sel in [
-        (By.XPATH, "//label[.//span[contains(translate(., 'TODAYBUGÜN', 'todaybugün'), 'today') or contains(translate(., 'TODAYBUGÜN', 'todaybugün'), 'bugün')]]//input"),
-        (By.XPATH, "//span[contains(.,'Today') or contains(.,'Bugün')]/ancestor::label//input"),
-        (By.XPATH, "//input[@type='checkbox' or @type='radio'][@value='TODAY' or @value='Today']"),
+        (By.XPATH, "//label[.//span[contains(translate(., 'YESTERDAY', 'yesterday'), 'yesterday') or contains(translate(., 'YESTERDAY, 'Yesterday'), 'yesterday')]]//input"),
+        (By.XPATH, "//span[contains(.,'Yesterday') or contains(.,'Yesterday')]/ancestor::label//input"),
+        (By.XPATH, "//input[@type='checkbox' or @type='radio'][@value='YESTERDAY' or @value='Yesterday']"),
     ]:
         try:
             el = WebDriverWait(driver, 6).until(EC.presence_of_element_located(sel))
